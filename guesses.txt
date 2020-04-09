@@ -2,4 +2,9 @@ a
 e
 i
 o
-point
+b
+l
+t
+r
+s
+soldier

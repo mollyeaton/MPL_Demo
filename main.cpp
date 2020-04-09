@@ -4,6 +4,12 @@
 #include <string>
 #include <ctime>
 
+// Different OSs use different CLI commands to run Python
+#ifdef _WIN32
+const string python = "python";
+#else
+const std::string python = "python3";
+#endif
 
 using namespace std;
 
@@ -91,7 +97,7 @@ int main(){
             guess = makeLower(guess);
         }
 
-        string command = "python3 hangman.py";
+        string command = python + " hangman.py";
         system(command.c_str());
         ++ guessCounter;
 
