@@ -3,14 +3,37 @@
 #include <vector>
 #include <string>
 #include <ctime>
-#include <iomanip>
 
 
 using namespace std;
 
+/**
+    * Requires: file names for the inFile (dictionary) and outFile (picked word)
+    * Modifies: word.txt
+    * Effects:  reads in the words from the dictionary and randomly chooses one for the game
+    *       the word is stored in word.txt
+    */
 string pickWord(string inFile, string outFile);
-bool validateGuess(string guess);
+
+/**
+    * Requires: string guess
+    * Modifies: guesses.txt
+    * Effects:  validates the inputted guess for the requirements and passes it to guesses.txt if it passes
+    */
+bool validateGuess(string guess, string word);
+
+/**
+    * Requires: string filename
+    * Modifies: input file
+    * Effects:  clears the current contents
+    */
 void clearFile(string filename);
+
+/**
+    * Requires: string word
+    * Modifies: nothing
+    * Effects:  returns the passed word as all lowercase
+    */
 string makeLower(string word);
 
 int main(){
@@ -53,7 +76,7 @@ int main(){
         guess = makeLower(guess); //make lowercase
 
         //continue prompting for a guess until it meets the requirements
-        while (!validateGuess(guess)){
+        while (!validateGuess(guess, word)){
             cout << "Enter your new guess: " ;
             cin.clear();
             cin.ignore(256, '\n');
@@ -129,7 +152,7 @@ string pickWord(string inFile, string outFile) {
     return wordVec[wordChoice];
 }
 
-bool validateGuess(string guess){
+bool validateGuess(string guess, string word){
     string filename = "guesses.txt";
     string letter;
     vector<string> guessVec;
@@ -170,7 +193,9 @@ bool validateGuess(string guess){
     }
 
     ofstream outFile(filename, ios::app);
-    outFile << guess << endl;
+    //only add the guess if it is a single character or is equal to the word
+    if (guess.length() == 1 || guess == word)
+        outFile << guess << endl;
 
     outFile.close();
     return true;

@@ -6,9 +6,8 @@ word = wordFile.read()
 word = list(word)
 
     
-guessesFile = open("guesses.txt", "r")
-guesses = guessesFile.read()
-
+guessesFile = open("guesses.txt", "r+")
+guesses = guessesFile.read().strip('\n')
 
 hiddenWord = '' #initialize as an empty string
 
