@@ -1,7 +1,5 @@
 a
 e
 i
-t
-g
-r
-h
+o
+point

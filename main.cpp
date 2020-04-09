@@ -197,6 +197,7 @@ bool validateGuess(string guess, string word){
     if (guess.length() == 1 || guess == word)
         outFile << guess << endl;
 
+
     outFile.close();
     return true;
 

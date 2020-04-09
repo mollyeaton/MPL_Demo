@@ -1,17 +1,21 @@
-
+#open the hidden word file in write mode
 hiddenWordFile = open("hiddenWord.txt", "w")
 
+#open the word file in read mode
 wordFile = open("Word.txt", "r")
+#store the data into the word variable
 word = wordFile.read()
+#make the word a list so that it can be iterated through
 word = list(word)
 
-    
-guessesFile = open("guesses.txt", "r+")
+#open the guesses file in read mode
+guessesFile = open("guesses.txt", "r")
+#store the data into the guesses variable and strip all new line characters
 guesses = guessesFile.read().strip('\n')
 
 hiddenWord = '' #initialize as an empty string
 
-#replace all letters in the word with an asterick
+#replace all letters in the word with an asterisk
 for i in word:
     hiddenWord += '*'
 
