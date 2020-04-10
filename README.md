@@ -29,7 +29,7 @@ To run this program you will need:
 >   * "hangman.py" - peripheral python program to check guesses against word
 
 For the program to run you will need to compile and execute via command line prompts. Here are the basic commands you 
-will need to run with C++14:
+will need to run with C++14 once you are in the same directory:
 
 > g++ -std=c++1y main.cpp
 >

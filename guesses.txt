@@ -2,9 +2,11 @@ a
 e
 i
 o
-b
-l
-t
+p
 r
 s
-soldier
+t
+b
+w
+c
+locate

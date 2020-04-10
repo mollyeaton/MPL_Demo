@@ -47,7 +47,7 @@ int main(){
     srand((unsigned) time(0));
 
     //declare variables
-    const int MAX_GUESSES = 15;
+    const int MAX_GUESSES = 12;
     string guess;
     int guessCounter = 0;
     bool guessed = false;
